@@ -20,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/omarCA/wraith/issues"
   },
-  "homepage": "https://github.com/omarCA/wraith"
+  "homepage": "https://github.com/omarCA/wraith",
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "mocha": "^2.1.0"
+  }
 }
