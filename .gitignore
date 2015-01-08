@@ -31,3 +31,5 @@ node_modules
 # WebStorm
 .idea
 
+# static site folder 
+static/*
