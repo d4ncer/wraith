@@ -32,6 +32,7 @@
     }
   ],
   "dependencies": {
+    "commander": "^2.6.0",
     "walk": "^2.3.9"
   },
   "bin": {
