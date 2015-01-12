@@ -2,7 +2,11 @@
   "name": "wraith",
   "version": "0.0.1",
   "description": "Static site generator for Ghost",
+<<<<<<< HEAD
   "main": "./lib/wraith.js",
+=======
+  "main": "lib/wraith",
+>>>>>>> working thorugh config
   "scripts": {
     "test": "mocha test"
   },
@@ -16,7 +20,6 @@
     "Buster"
   ],
   "author": "Omar Alvarez, Raghuvir Kasturi, Ryan Leung",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/omarCA/wraith/issues"
   },
@@ -31,6 +34,7 @@
       "url": "https://github.com/omarCA/wraith/blob/master/LICENSE"
     }
   ],
+<<<<<<< HEAD
   "dependencies": {
     "commander": "^2.6.0",
     "walk": "^2.3.9",
@@ -38,5 +42,12 @@
   },
   "bin": {
     "wraith": "./lib/wraith.js"
+=======
+  "bin": {
+    "wraith": "lib/wraith.js"
+  },
+  "dependencies": {
+    "http-request": "^0.7.0"
+>>>>>>> working thorugh config
   }
 }
