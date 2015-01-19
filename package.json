@@ -2,10 +2,10 @@
   "name": "wraith",
   "version": "0.0.1",
   "description": "Static site generator for Ghost",
-  "main": "./lib/wraith.js",
+  "main": "./bin/wraith.js",
   "scripts": {
     "test": "mocha test",
-    "postinstall": "node ./lib/postinstall.js"
+    "postinstall": "node ./bin/postinstall.js"
   },
   "repository": {
     "type": "git",
@@ -43,6 +43,6 @@
     "walk": "^2.3.9"
   },
   "bin": {
-    "wraith": "./lib/wraith.js"
+    "wraith": "./bin/wraith.js"
   }
 }
