@@ -4,7 +4,8 @@
   "description": "Static site generator for Ghost",
   "main": "./lib/wraith.js",
   "scripts": {
-    "test": "mocha test"
+    "test": "mocha test",
+    "postinstall": "node ./lib/postinstall.js"
   },
   "repository": {
     "type": "git",
@@ -32,11 +33,14 @@
     }
   ],
   "dependencies": {
+    "chalk": "^0.5.1",
     "commander": "^2.6.0",
-    "underscore": "^1.7.0",
     "connect": "^3.3.4",
-    "walk": "^2.3.9",
-    "serve-static": "^1.8.0"
+    "inquirer": "^0.8.0",
+    "jsonfile": "^2.0.0",
+    "serve-static": "^1.8.0",
+    "underscore": "^1.7.0",
+    "walk": "^2.3.9"
   },
   "bin": {
     "wraith": "./lib/wraith.js"
