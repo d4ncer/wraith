@@ -7,7 +7,7 @@
 // var _ = require('underscore');
 
 var program = require('commander');
-var setup = require('./setup');
+var Setup = require('./setup');
 var Possess = require('./possess');
 var Haunt = require('./haunt');
 var Spook = require('./spook');
@@ -43,5 +43,6 @@ if (program.haunt) {
 }
 
 if (program.setup) {
-  setup.setup();
+  var wraith = new Setup();
+  wraith.setup();
 }

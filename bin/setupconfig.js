@@ -4,7 +4,7 @@ var setupconfig = {
       name: 'name',
       message: 'The name of your Wraith instance (eg: myBlog, ghostBlog). Must be unique!',
       validate: function(name) {
-        var testPath = setUpObj.wraithPath(name);
+        var testPath = this.wraithPath(name);
         return !fs.existsSync(testPath);
       }
     },
