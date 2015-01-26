@@ -7,14 +7,13 @@ var chalk = require('chalk');
 var error = chalk.bold.red;
 var success = chalk.green;
 
-
-var setUpObj = {
-  questions: [
+var setUpObj = function(){
+  this.questions = [
     {
       name: 'name',
       message: 'The name of your Wraith instance (eg: myBlog, ghostBlog). Must be unique!',
       validate: function(name) {
-        var testPath = setUpObj.wraithPath(name);
+        var testPath = setUpObj.prototype.wraithPath(name);
         return !fs.existsSync(testPath);
       }
     },
@@ -49,25 +48,26 @@ var setUpObj = {
       name: 'cname',
       message: 'The CNAME that needs to be added for GitHub Pages'
     }
+  ];
+};
 
-  ],
-  wraithPath: function(name) {
-    return path.join(process.env.HOME, '.wraithc', name + '.json');
-  },
-  setup: function() {
-    var self = this;
-    inquirer.prompt(this.questions, function(answers) {
-      var wPath = self.wraithPath(answers.name);
+setUpObj.prototype.wraithPath = function(name) {
+  return path.join(process.env.HOME, '.wraithc', name + '.json');
+};
 
-      jf.writeFile(wPath, answers, function(err) {
-        if (err) {
-          console.log(error('Something went wrong! Please try again.'))
-        } else {
-          console.log(success('All good! %s is now ready to be possessed, spooked, and haunted!'), answers.name);
-        }
-      })
+setUpObj.prototype.setup = function() {
+  var self = this;
+  inquirer.prompt(this.questions, function(answers) {
+    var wPath = self.wraithPath(answers.name);
+
+    jf.writeFile(wPath, answers, function(err) {
+      if (err) {
+        console.log(error('Something went wrong! Please try again.'))
+      } else {
+        console.log(success('All good! %s is now ready to be possessed, spooked, and haunted!'), answers.name);
+      }
     })
-  }
+  })
 };
 
 module.exports = setUpObj;
